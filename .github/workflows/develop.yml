@@ -42,7 +42,6 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/ruby-app:develop .
+          docker build --pull --rm -f "Dockerfile" -t ${{ secrets.DOCKER_USERNAME }}/ruby:develop "."
           docker push ${{ secrets.DOCKER_USERNAME }}/ruby-app:develop
-        working-directory: ./
     
