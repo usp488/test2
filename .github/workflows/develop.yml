@@ -5,14 +5,13 @@ on:
     branches: [ "develop" ]
   pull_request:
     branches: [ "develop" ]
-  workflow_dispatch:
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
   
 jobs:
-  lint:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -39,6 +38,6 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build --pull --rm -f "Dockerfile" -t ${{ secrets.DOCKER_USERNAME }}/ruby:develop "."
+          docker build --pull --rm -f "Dockerfile" -t ${{ secrets.DOCKER_USERNAME }}/ruby-app:develop "."
           docker push ${{ secrets.DOCKER_USERNAME }}/ruby-app:develop
     
