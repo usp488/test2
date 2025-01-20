@@ -1,6 +1,6 @@
 ### Homework Assignment: Building a CI/CD Pipeline with GitHub Actions
 
-#### **Objective**
+#### **Objective**.
 Students will design and implement a CI/CD pipeline using **GitHub Actions** for a **Ruby application**. The pipeline will ensure code quality, security, and proper deployment practices by including steps for linting, vulnerability scanning, testing, and Docker image deployment.
 
 ---
